@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Aurelia</title>
+    <link rel="stylesheet" type="text/css" href="content/styles.css">
+  </head>
+  <body aurelia-app>
+    <div class="splash">
+      <div class="message">Loading Aurelia Application</div>
+    </div>
+
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+    <script>
+     System.config({
+       "paths": {
+         "*": "dist/*.js"
+       }
+     });
+   </script>
+    <script>
+      System.import('aurelia-bootstrapper');
+    </script>
+  </body>
+</html>
