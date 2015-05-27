@@ -14,7 +14,7 @@ export class Recipe{
     }
 
     activate(params){
-        this.http.get(join(this.url, params.id))
+        return this.http.get(join(this.url, params.id))
             .then(response => this.recipe = response.content);
     }
 
@@ -23,7 +23,7 @@ export class Recipe{
     }
 
     saveRecipe(){
-        this.http.post(this.url, this.recipe).then(
+        return this.http.put(this.url + '/1', this.recipe).then(
             ()=> this.editMode = false);
     }
 }
