@@ -1,5 +1,5 @@
-﻿import {HttpClient} from 'aurelia-http-client';
-import {inject} from 'aurelia-framework';
+﻿import {inject} from 'aurelia-framework';
+import {HttpClient} from 'aurelia-http-client';
 // import {ImagePathValueConverter} from './converters';
 
 @inject(HttpClient)
@@ -8,7 +8,7 @@ export class WeeklyMenu {
     constructor(http){
         this.http = http;
         this.recipes = null;
-        this.url = 'data/recipies.json';
+        this.url = 'http://recipewebapi.azurewebsites.net/api/recipes';
     }
 
     activate(){
