@@ -2,10 +2,10 @@
 import {join} from 'aurelia-path';
 import {HttpClient} from 'aurelia-http-client';
 
-//@inject(HttpClient)
+@inject(HttpClient)
 export class Recipe{
 
-    static inject = [HttpClient];
+    // static inject = [HttpClient];
     constructor(http){
         this.editMode = false;
         this.http = http;
@@ -23,7 +23,9 @@ export class Recipe{
     }
 
     saveRecipe(){
-        return this.http.put(this.url + '/1', this.recipe).then(
+        return this.http.createRequest(this.url + '/1').asPut()
+          .withHeader('content-type', 'application/json')
+          .withContent(this.recipe).send().then(
             ()=> this.editMode = false);
     }
 }

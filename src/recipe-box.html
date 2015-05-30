@@ -1,0 +1,15 @@
+<template>
+  <div class="box">
+    <a route-href="route: recipe; params.bind: {id: recipe.recipeID}">
+      <div class="box-content"
+           css="float:${ contentToTheLeft ? 'left' : 'right'}">
+
+        <h2>${recipe.weekday}</h2>
+        <h4>${recipe.name}</h4>
+      </div>
+      <div class="box-image ${contentToTheLeft ? 'float-right' : 'float-left'}">
+        <img src.bind="recipe.image | imagePath" width="200" height="120" alt="Recipe Image">
+      </div>
+    </a>
+  </div>
+</template>

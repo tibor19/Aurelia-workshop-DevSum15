@@ -1,17 +1,6 @@
 ﻿<template>
+  <require from="./recipe-box" ></require>
     <h2>Weekly Menu</h2>
 
-    <div class="box" repeat.for="recipe of recipes">
-        <a route-href="route: recipe; params.bind: {id: recipe.recipeID}">
-            <div class="box-content"
-                 css="float:${$odd ? 'left' : 'right'}">
-
-                <h2>${$index | weekDay}</h2>
-                <h4>${recipe.name}</h4>
-            </div>
-            <div class="box-image ${$odd ? 'float-right' : 'float-left'}">
-                <img src.bind="recipe.image | imagePath" width="200" height="120" alt="Recipe Image">
-            </div>
-        </a>
-    </div>
+    <recipe-box repeat.for="recipe of recipes" recipe.bind="recipe" content-to-the-left.bind="$odd"></recipe-box>
 </template>

@@ -23,13 +23,6 @@ export class WeeklyMenu {
     }
 }
 
-export class ImagePathValueConverter {
-
-    toView(value){
-        return value && 'content/images/food/' + value + '.jpg';
-    }
-}
-
 export class WeekDayValueConverter {
 
     toView(value){
